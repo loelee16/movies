@@ -1,0 +1,41 @@
+<div class="add-div" *ngIf="isLogin">
+    <button mat-fab extended (click)="onRequestToAddMovie()">Add
+        Movie<mat-icon>add</mat-icon></button>
+        
+    <div class="movieForm-div" *ngIf="showAddMovieForm">
+        <form >
+            <mat-form-field >
+                <mat-label class="white-label">Enter a movie name</mat-label>
+                <input matInput placeholder="Spiderman" [(ngModel)]="movieToAdd.name" name="name"/>                
+            </mat-form-field>            
+        </form>        
+        <button mat-flat-button color="accent" (click)="onAddMovie()">Submit</button>
+    </div>
+    <div class="showMessage-div" *ngIf="showMessage">
+        <span>{{message}}</span>        
+        <button mat-flat-button color="accent" (click)="onOKMessage()">OK</button>
+    </div>
+</div>
+<div *ngFor="let movie of movies">
+    <mat-card class="movie-card">
+        <mat-card-header>
+            <mat-card-title>{{movie.name}}</mat-card-title>
+        </mat-card-header>                       
+        <mat-card-content class="movie-content">
+            <img class="img-display" *ngIf="movie.imageLink && movie.imageLink.length>0" mat-card-image src="{{movie.imageLink}}" alt="Photo of a Shiba Inu">
+            <div><span>{{movie.name}}</span></div>
+            <div><span>{{movie.likeCount}} like it.</span></div>    
+            <button mat-fab (click)="onLike(movie)"
+            aria-label="Click me to like"><mat-icon>thumb_up_off_alt</mat-icon></button>                    
+            <div *ngIf="isLogin">
+                <mat-form-field >                
+                    <mat-label class="white-label">Image Link</mat-label>
+                    <input matInput placeholder="link" [(ngModel)]="movie.imageLink" name="imageLink"/>
+                </mat-form-field>     
+                <button mat-flat-button color="accent" (click)="onSaveMovie(movie)">Submit</button>                
+            </div>
+        </mat-card-content>
+        <mat-card-actions>             
+        </mat-card-actions>
+    </mat-card>
+</div>

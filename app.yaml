@@ -1,0 +1,14 @@
+runtime: nodejs16
+
+instance_class: F2
+
+env_variables: 
+  BUCKET_NAME: "ng-app-avela-movie-bucket"
+
+handlers:
+  - url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
+    static_files: dist/movies/\1
+    upload: dist/movies/(.*)(|\.map)
+  - url: /(.*)
+    static_files: dist/movies/index.html
+    upload: dist/movies/index.html

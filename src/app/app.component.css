@@ -1,0 +1,14 @@
+.title{
+    text-align: center;
+}
+.signIn {
+    float: right    
+}
+.toolbar {
+    margin-bottom: 100px;    
+}
+a,
+a label {
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -1,0 +1,41 @@
+.add-div {
+    max-width: 100%;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+.movieForm-div{
+    margin-top: 8px;
+    margin-left: 20px;
+}
+.movie-card {
+    max-width: 100%;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-color: #5d2397;
+    color: white;
+}
+
+.movie-content {
+    text-align: center;
+    vertical-align: middle;
+}
+.white-label{
+    color: white;
+}
+
+.showMessage-div{
+    margin-top: 8px;
+    margin-left: 20px;
+}
+.add-form {
+    min-width: 150px;
+    max-width: 500px;
+    background-color: white;
+
+}
+
+.img-display {
+    max-width: 50%;
+}

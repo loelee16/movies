@@ -1,0 +1,20 @@
+<div *ngIf="movie">
+    <div class="movieForm-div">
+        <form >
+            <mat-form-field >
+                <mat-label class="movie-name-label">Movie Name</mat-label>
+                <input matInput placeholder="Spiderman" [(ngModel)]="movie.name" name="name"/>                
+            </mat-form-field>
+            <mat-form-field >                
+                <mat-label class="movie-Link-label">Image Link</mat-label>
+                <input matInput placeholder="link" [(ngModel)]="movie.imageLink" name="imageLink"/>
+            </mat-form-field>            
+        </form>        
+        <button mat-flat-button color="accent" (click)="onSaveMovie()">Submit</button>
+    </div>
+    <div class="showMessage-div" *ngIf="showMessage">
+        <span>{{message}}</span>        
+        <button mat-flat-button color="accent" (click)="onOKMessage()">OK</button>
+    </div>
+    <button mat-flat-button color="accent" (click)="close()">Close</button>
+</div>
