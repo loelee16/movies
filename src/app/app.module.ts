@@ -20,7 +20,6 @@ import { OktaAuth } from '@okta/okta-auth-js';
 import { AuthInterceptor } from './auth.interceptor';
 
 import {ENV, getEnv} from '../environments/environment.provider';
-import { MovieFormComponent } from './movie-form/movie-form.component';
 
 const oktaAuth = new OktaAuth({
   issuer: getEnv().oktaIssuer,
@@ -32,8 +31,7 @@ const oktaAuth = new OktaAuth({
   declarations: [
     AppComponent,
     MoviesComponent,
-    ProfileComponent,
-    MovieFormComponent
+    ProfileComponent    
   ],
   imports: [
     BrowserModule,
