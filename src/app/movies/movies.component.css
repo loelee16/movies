@@ -39,3 +39,16 @@
 .img-display {
     max-width: 50%;
 }
+
+
+.img-link-form {
+    margin-top: 10px;
+    margin-right: 10px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .img-link {
+    width: 100%;    
+  }

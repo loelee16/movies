@@ -23,14 +23,14 @@
         </mat-card-header>                       
         <mat-card-content class="movie-content">
             <img class="img-display" *ngIf="movie.imageLink && movie.imageLink.length>0" mat-card-image src="{{movie.imageLink}}" alt="Photo of a Shiba Inu">
-            <div><span>{{movie.name}}</span></div>
-            <div><span>{{movie.likeCount}} like it.</span></div>    
-            <button mat-fab (click)="onLike(movie)"
-            aria-label="Click me to like"><mat-icon>thumb_up_off_alt</mat-icon></button>                    
+            <div>{{movie.name}}</div>
+            <div>{{movie.likeCount}} people like this</div>    
+            <div><button mat-fab (click)="onLike(movie)"
+            aria-label="Click me to like"><mat-icon>thumb_up_off_alt</mat-icon></button></div>
             <div *ngIf="isLogin">
-                <mat-form-field >                
+                <mat-form-field class="img-link-form">                
                     <mat-label class="white-label">Image Link</mat-label>
-                    <input matInput placeholder="link" [(ngModel)]="movie.imageLink" name="imageLink"/>
+                    <textarea matInput placeholder="link" [(ngModel)]="movie.imageLink" name="imageLink" class="img-link"></textarea>
                 </mat-form-field>     
                 <button mat-flat-button color="accent" (click)="onSaveMovie(movie)">Submit</button>                
             </div>
